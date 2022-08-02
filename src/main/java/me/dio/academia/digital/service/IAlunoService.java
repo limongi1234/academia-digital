@@ -8,7 +8,8 @@ import me.dio.academia.digital.entity.form.AlunoUpdateForm;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface IAlunoService {
+public interface IAlunoService 
+{
   /**
    * Cria um Aluno e salva no banco de dados.
    * @param form formulário referente aos dados para criação de um Aluno no banco de dados.
@@ -27,7 +28,7 @@ public interface IAlunoService {
    * Retorna os Alunos que estão no banco de dados.
    * @return Uma lista os Alunos que estão salvas no DB.
    */
-  List<Aluno> getAll(String dataDeNascimento);
+  List <Aluno> getAll(String dataDeNascimento);
 
   /**
    * Atualiza o Aluno.
@@ -49,7 +50,5 @@ public interface IAlunoService {
    * @param id id do aluno que será recuperada a lista de avaliações
    * @return uma lista com todas as avaliações do aluno de acordo com o Id
    */
-  List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id);
-
-
+  List <AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id);
 }
