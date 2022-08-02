@@ -6,7 +6,8 @@ import me.dio.academia.digital.entity.form.AvaliacaoFisicaUpdateForm;
 
 import java.util.List;
 
-public interface IAvaliacaoFisicaService {
+public interface IAvaliacaoFisicaService
+{
   /**
    * Cria uma Avaliação Física e salva no banco de dados.
    * @param form - formulário referente aos dados para criação da Avaliação Física no banco de dados.
@@ -25,7 +26,7 @@ public interface IAvaliacaoFisicaService {
    * Retorna todas as Avaliações Física que estão no banco de dados.
    * @return - Uma lista com todas as Avaliações Física que estão salvas no DB.
    */
-  List<AvaliacaoFisica> getAll();
+  List <AvaliacaoFisica> getAll();
 
   /**
    * Atualiza a avaliação física.
