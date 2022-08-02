@@ -14,13 +14,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class AlunoServiceImpl implements IAlunoService {
+public class AlunoServiceImpl implements IAlunoService 
+{
 
   @Autowired
   private AlunoRepository repository;
 
   @Override
-  public Aluno create(AlunoForm form) {
+  public Aluno create(AlunoForm form) 
+  {
     Aluno aluno = new Aluno();
     aluno.setNome(form.getNome());
     aluno.setCpf(form.getCpf());
@@ -31,16 +33,19 @@ public class AlunoServiceImpl implements IAlunoService {
   }
 
   @Override
-  public Aluno get(Long id) {
+  public Aluno get(Long id) 
+  {
     return null;
   }
 
   @Override
-  public List<Aluno> getAll(String dataDeNascimento) {
+  public List <Aluno> getAll(String dataDeNascimento) 
+  {
 
-    if(dataDeNascimento == null) {
+    if(dataDeNascimento == null) 
       return repository.findAll();
-    } else {
+    else 
+    {
       LocalDate localDate = LocalDate.parse(dataDeNascimento, JavaTimeUtils.LOCAL_DATE_FORMATTER);
       return repository.findByDataDeNascimento(localDate);
     }
@@ -48,21 +53,22 @@ public class AlunoServiceImpl implements IAlunoService {
   }
 
   @Override
-  public Aluno update(Long id, AlunoUpdateForm formUpdate) {
+  public Aluno update(Long id, AlunoUpdateForm formUpdate) 
+  {
     return null;
   }
 
   @Override
-  public void delete(Long id) {
+  public void delete(Long id) 
+  {
   }
 
   @Override
-  public List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id) {
+  public List <AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id) 
+  {
 
     Aluno aluno = repository.findById(id).get();
 
     return aluno.getAvaliacoes();
-
-  }
-
+    }
 }
