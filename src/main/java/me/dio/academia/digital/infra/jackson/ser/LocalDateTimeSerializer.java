@@ -11,16 +11,19 @@ import java.time.LocalDateTime;
 /**
  * @author Venilton Falvo Jr
  */
-public class LocalDateTimeSerializer extends StdSerializer<LocalDateTime> {
+public class LocalDateTimeSerializer extends StdSerializer <LocalDateTime> 
+{
 
-	private static final long serialVersionUID = -6347158617481757931L;
+   private static final long serialVersionUID = -6347158617481757931L;
 
-	public LocalDateTimeSerializer() {
+   public LocalDateTimeSerializer()
+   {
         super(LocalDateTime.class);
     }
 
     @Override
-    public void serialize(final LocalDateTime value, final JsonGenerator generator, final SerializerProvider provider) throws IOException {
+    public void serialize(final LocalDateTime value, final JsonGenerator generator, final SerializerProvider provider) throws IOException 
+    {
         generator.writeString(value.format(JavaTimeUtils.LOCAL_DATE_TIME_FORMATTER));
     }
 }
