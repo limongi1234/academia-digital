@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_avaliacoes")
-public class AvaliacaoFisica {
+public class AvaliacaoFisica 
+{
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -29,5 +30,4 @@ public class AvaliacaoFisica {
 
   @Column(name="altura_atual")
   private double altura;
-
 }
