@@ -11,20 +11,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/matriculas")
-public class MatriculaController {
+public class MatriculaController
+{
 
   @Autowired
   private MatriculaServiceImpl service;
 
   @PostMapping
-  public Matricula create(@Valid @RequestBody MatriculaForm form) {
+  public Matricula create(@Valid @RequestBody MatriculaForm form) 
+  {
     return service.create(form);
   }
 
   @GetMapping
-  public List<Matricula> getAll(@RequestParam(value = "bairro", required = false) String bairro) {
+  public Lis t<Matricula> getAll(@RequestParam(value = "bairro", required = false) String bairro) 
+  {
     return service.getAll(bairro);
   }
-
 }
 
