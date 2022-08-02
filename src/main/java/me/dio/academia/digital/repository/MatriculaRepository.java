@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MatriculaRepository extends JpaRepository<Matricula, Long> {
+public interface MatriculaRepository extends JpaRepository<Matricula, Long> 
+{
 
   /**
    *
@@ -19,9 +20,7 @@ public interface MatriculaRepository extends JpaRepository<Matricula, Long> {
       "INNER JOIN tb_alunos a ON m.aluno_id = a.id " +
       "WHERE a.bairro = :bairro", nativeQuery = true)
   //@Query("FROM Matricula m WHERE m.aluno.bairro = :bairro ")
-  List<Matricula> findAlunosMatriculadosBairro(String bairro);
+  List <Matricula> findAlunosMatriculadosBairro(String bairro);
 
-  //List<Matricula> findByAlunoBairro(String bairro);
-
-
+  //List <Matricula> findByAlunoBairro(String bairro);
 }
