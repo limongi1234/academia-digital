@@ -6,7 +6,8 @@ import java.util.Locale;
 /**
  * @author Venilton Falvo Jr
  */
-public class JavaTimeUtils {
+public class JavaTimeUtils
+{
 	
 	private JavaTimeUtils() {}
 	
