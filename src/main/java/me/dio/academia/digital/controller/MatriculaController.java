@@ -24,7 +24,7 @@ public class MatriculaController
   }
 
   @GetMapping
-  public Lis t<Matricula> getAll(@RequestParam(value = "bairro", required = false) String bairro) 
+  public List <Matricula> getAll(@RequestParam (value = "bairro", required = false) String bairro) 
   {
     return service.getAll(bairro);
   }
