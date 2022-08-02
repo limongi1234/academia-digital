@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MatriculaServiceImpl implements IMatriculaService {
+public class MatriculaServiceImpl implements IMatriculaService
+{
 
   @Autowired
   private MatriculaRepository matriculaRepository;
@@ -21,7 +22,8 @@ public class MatriculaServiceImpl implements IMatriculaService {
   private AlunoRepository alunoRepository;
 
   @Override
-  public Matricula create(MatriculaForm form) {
+  public Matricula create(MatriculaForm form)
+  {
     Matricula matricula = new Matricula();
     Aluno aluno = alunoRepository.findById(form.getAlunoId()).get();
 
@@ -31,24 +33,21 @@ public class MatriculaServiceImpl implements IMatriculaService {
   }
 
   @Override
-  public Matricula get(Long id) {
+  public Matricula get(Long id) 
+  {
     return matriculaRepository.findById(id).get();
   }
 
   @Override
-  public List<Matricula> getAll(String bairro) {
+  public List <Matricula> getAll(String bairro)
+  {
 
-    if(bairro == null){
+    if(bairro == null)
       return matriculaRepository.findAll();
-    }else{
+    else
       return matriculaRepository.findAlunosMatriculadosBairro(bairro);
-    }
-
   }
 
   @Override
   public void delete(Long id) {}
-
-
-
 }
