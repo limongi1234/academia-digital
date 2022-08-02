@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AvaliacaoFisicaForm {
+public class AvaliacaoFisicaForm 
+{
 
   //@Positive(message = "O Id do aluno precisa ser positivo.")
   private Long alunoId;
