@@ -17,7 +17,8 @@ import java.util.List;
 @Entity
 @Table(name = "tb_alunos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Aluno {
+public class Aluno
+{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +35,6 @@ public class Aluno {
 
   @OneToMany(mappedBy = "aluno", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
   @JsonIgnore
-  private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
+  private List <AvaliacaoFisica> avaliacoes = new ArrayList <> ();
 
 }
